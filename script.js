@@ -10,22 +10,37 @@ for (let param of window.location.href.replace(/.*\?/gi, "").split("&")) {
     }
 }
 
-const cipherTypes = ["ceasar", "affine", "vigenere", "polybius-square"];
+const cipherTypeSelect = document.querySelector('[name="cipher-type"]');
+
+const cipherTypes = ["ceasar", "affine", "vigenere", "polybius_square"];
+/*{
+    ceasar: "Ceasar",
+    affine: "Affine",
+    vigenere: "Vigenere",
+    polybius_square: "Polybius Square",
+};//*/
 
 const settings = {
-    currentCipher: "",
+    cCipher: "",
     set currentCipher(newCipher) {
         if (this.currentCipher === newCipher) return;
-        if (!(newCipher in cipherTypes)) return;
+        // if (!(newCipher in cipherTypes)) return; // For object
+        if (!cipherTypes.includes(newCipher)) return; // For array
 
-        this.currentCipher = newCipher;
+        cipherTypeSelect.children[cipherTypes.indexOf(newCipher)].setAttribute("selected", "");
+
+        this.cCipher = newCipher;
     },
     ceasar: {},
+    affine: {},
+    vigenere: {},
+    polybius_square: {},
 };
 
-if (urlParams["cipher"] in cipherTypes) {
+// if (urlParams["cipher"] in cipherTypes) {
+if (cipherTypes.includes(urlParams["cipher"])) {
     settings.currentCipher = urlParams["cipher"];
 } else {
-    console.warn("URL param 'cipher' has invalid argument\nDefaulting to Ceasar");
+    console.warn("URL param 'cipher' has invalid argument\nDefaulting to ceasar");
     settings.currentCipher = "ceasar";
 }

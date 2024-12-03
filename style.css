@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div#page {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffdd0;
+}
+
+header#header {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    height: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5ef7c;
+}
+
+header#header > h1 {
+    margin: 5px;
+    margin-left: 22px !important;
+    font-family: "m-plus-rounded-1c-extrabold";
+    font-size: 45px;
+    line-height: 45px;
+    color: #8f8800;
+}
+
+div#content {
+    margin: 5px;
+    border-radius: 35px;
+    padding: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #f8f4a6;
+}
+
+div#textareas {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    flex-direction: row;
+}
+
+div#textareas > textarea {
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding: 16px;
+    border-radius: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    resize: none;
+    background-color: #f8f7cc;
+    transition: background-color 0.3s;
+}
+
+div#textareas > textarea:hover {
+    background-color: #faf8d7;
+}
+
+div#textareas > textarea:focus {
+    background-color: #fffee1;
+}
+
+div#settings {
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    width: 300px;
+    resize: horizontal;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9bc;
+}
+
+div#cipher-type {
+    height: 40px;
+    padding-left: 5px;
+}
+
+[name="cipher-type"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 2px;
+    background-color: #0000;
+}
+
+select::selection {
+    border: none;
+    outline: none;
+}
+
+div.cipher-settings {
+    margin: 5px;
+    border-radius: 10px;
+    height: 50px;
+    background-color: #fffee1;
+}
