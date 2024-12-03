@@ -7,6 +7,7 @@
         <title>Cipher</title>
         <meta name="description" content="Tools for cipher stuff." />
 
+        <script src="./script.js"></script>
         <link rel="stylesheet" href="./assets/fonts/font-style.css" />
         <style>
             * {
@@ -75,7 +76,7 @@
                 flex-direction: column;
             }
 
-            textarea#ciphertext {
+            div#textareas > textarea {
                 margin: 10px;
                 border: none;
                 outline: none;
@@ -89,40 +90,33 @@
                 transition: background-color 0.3s;
             }
 
-            textarea#ciphertext:hover {
+            div#textareas > textarea:hover {
                 background-color: #faf8d7;
             }
 
-            textarea#ciphertext:focus {
-                background-color: #fffee1;
-            }
-
-            textarea#plaintext {
-                margin: 10px;
-                border: none;
-                outline: none;
-                padding: 5px;
-                border-radius: 10px;
-                flex-grow: 1;
-                flex-shrink: 1;
-                flex-basis: 0;
-                resize: none;
-                background-color: #f8f7cc;
-            }
-
-            textarea#plaintext:hover {
-                background-color: #faf8d7;
-            }
-
-            textarea#plaintext:focus {
+            div#textareas > textarea:focus {
                 background-color: #fffee1;
             }
 
             div#settings {
                 margin: 10px;
                 border-radius: 10px;
-                width: 100px;
+                padding: 5px;
+                width: 300px;
+                resize: horizontal;
+                display: flex;
+                flex-direction: column;
                 background-color: red;
+            }
+
+            div#cipher-type {
+                height: 40px;
+            }
+
+            div.cipher-settings {
+                margin: 5px;
+                height: 50px;
+                background-color: aqua;
             }
         </style>
     </head>
@@ -134,7 +128,13 @@
                     <textarea id="ciphertext" placeholder="CipherText"></textarea>
                     <textarea id="plaintext" placeholder="Plaintext"></textarea>
                 </div>
-                <div id="settings"></div>
+                <div id="settings">
+                    <div id="cipher-type" class="cipher-settings"></div>
+                    <div id="ceasar" class="cipher-settings"></div>
+                    <div id="affine" class="cipher-settings"></div>
+                    <div id="vigenere" class="cipher-settings"></div>
+                    <div id="polybius-square" class="cipher-settings"></div>
+                </div>
             </div>
         </div>
     </body>
